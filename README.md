@@ -1,6 +1,6 @@
 # pocket-book
 
-> A Vue.js project
+> A pocket-book base on Vue.js
 
 ## Build Setup
 
