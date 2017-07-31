@@ -63,6 +63,16 @@ export default {
       this.selectDate = selectDate
       this.$emit('selectDate', selectDate)
     }
+  },
+  watch: {
+    // 考虑到不同的月份不一定有相同的date,因此date不是本月的默认selectDate为本月第一天
+    date () {
+      if (new Date().getFullYear() !== this.year || new Date().getMonth() !== this.month - 1) {
+        this.selectDate = 1
+      } else {
+        this.selectDate = this.date.getDate()
+      }
+    }
   }
 }
 </script>
