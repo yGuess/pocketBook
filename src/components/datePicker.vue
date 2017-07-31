@@ -7,7 +7,10 @@
       <div v-for = "item in weeks">{{item}}</div>
     </div>
     <div class="dates">
-      <div v-for = "item in dayCountOfMonth" :style="{ height: height + 'px', lineHeight: height + 'px' }">{{item}}</div>
+      <div :style="{ height: height + 'rem', lineHeight: height + 'rem', width: height * firstDayOfMonth + 'rem' }"></div>
+      <div v-for = "item in dayCountOfMonth" v-if="item < selectDate" @click="getSelectDate(item)" :style="{ height: height + 'rem', lineHeight: height + 'rem'}">{{item}}</div>
+      <div v-for = "item in dayCountOfMonth" v-if="item === selectDate" @click="getSelectDate(item)" :style="{ height: height + 'rem', lineHeight: height + 'rem', background: '#FFCD00', color: '#fff'}">{{item}}</div>
+      <div v-for = "item in dayCountOfMonth" v-if="item > selectDate" @click="getSelectDate(item)" :style="{ height: height + 'rem', lineHeight: height + 'rem' }">{{item}}</div>
     </div>
   </div>
 </template>
@@ -17,7 +20,8 @@ export default {
   name: 'datePicker',
   data () {
     return {
-      weeks: ['周日', '周一', '周二', '周三', '周四', '周五', '周六']
+      weeks: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+      selectDate: this.date.getDate()
     }
   },
   props: {
@@ -27,33 +31,37 @@ export default {
     }
   },
   computed: {
+    // 年
     year () {
       return this.date.getFullYear()
     },
+    // 月
     month () {
       return this.date.getMonth() + 1
     },
+    // 星期
     dayOfWeek () {
       return this.date.getDay()
     },
+    // 这个月的第一天的星期
     firstDayOfMonth () {
       return new Date(this.year, this.month - 1, 1).getDay()
     },
+    // 本月的天数
     dayCountOfMonth () {
       let y = this.year
       let m = this.month
       let count = m === 2 ? ((y % 4 === 0 && y % 100 !== 0 || y % 400 === 0) ? 29 : 28) : (m < 8 ? (m % 2 === 0 ? 30 : 31) : (m % 2 === 0 ? 31 : 30))
-      let result = []
-      for (var i = 0; i < this.firstDayOfMonth; i++) {
-        result.push('')
-      }
-      for (let i = 1; i < count + 1; i++) {
-        result.push(i)
-      }
-      return result
+      return count
     },
     height () {
-      return screen.width / 7
+      return (screen.width - 20) / 700
+    }
+  },
+  methods: {
+    getSelectDate (selectDate) {
+      this.selectDate = selectDate
+      this.$emit('selectDate', selectDate)
     }
   }
 }
@@ -65,14 +73,22 @@ export default {
     font-size: 0.18rem;
   }
   .week, .dates {
+    width: calc(100% - 0.2rem);
+    margin: 0.1rem auto;
     display: flex;
     flex-wrap: wrap;
     font-size: 0.14rem;
   }
   .week {
-    margin-top: 0.1rem;
+    color: #BABABA;
+  }
+  .dates {
+  font-size: 0.16rem;
+  font-weight: 500;
+
   }
   .week div, .dates div{
-    width: calc(100% / 7);
+    width: calc(3.55rem / 7);
+    border-radius: 50%;
   }
 </style>

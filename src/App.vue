@@ -4,7 +4,7 @@
       <div @click="prev"><</div>
       <div @click="next">></div>
     </div>
-    <datePicker :date="date"></datePicker>
+    <datePicker :date="date" v-on:selectDate="getSelectDate"></datePicker>
   </div>
 </template>
 
@@ -14,7 +14,8 @@ export default {
   name: 'app',
   data () {
     return {
-      date: new Date()
+      date: new Date(),
+      selectDate: new Date().getDate()
     }
   },
   components: {
@@ -32,6 +33,10 @@ export default {
       let month = this.date.getMonth() + 1
       let date = this.date.getDate()
       this.date = new Date(year, month, date)
+    },
+    getSelectDate (data) {
+      this.selectDate = data
+      console.log(data)
     }
   }
 }
@@ -47,6 +52,7 @@ export default {
 }
 .month-btn {
   width: 100%;
+  margin-top: 0.1rem;
   font-size: 0.14rem;
 }
 .month-btn > div:first-child {
