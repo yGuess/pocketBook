@@ -10,6 +10,22 @@ export default {
     return {
       msg: ''
     }
+  },
+  props: {
+    name: {
+      type: String,
+      default: 'qyt'
+    }
+  },
+  computed: {
+    methodName() {
+
+    }
+  },
+  methods: {
+  },
+  watch: {
+    //
   }
 }
 </script>

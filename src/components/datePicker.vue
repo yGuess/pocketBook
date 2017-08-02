@@ -86,17 +86,17 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="scss">
   .month {
     width: calc(100% - 0.2rem);
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     font-size: 0.18rem;
-  }
-  .btn {
-    font-weight: bold;
-    color: #FBB252;
+    .btn {
+      font-weight: bold;
+      color: #FBB252;
+    }
   }
   .week, .dates {
     width: calc(100% - 0.2rem);
@@ -107,14 +107,17 @@ export default {
   }
   .week {
     color: #BABABA;
+    div {
+      width: calc(3.55rem / 7);
+      border-radius: 50%;
+    }
   }
   .dates {
   font-size: 0.16rem;
   font-weight: 500;
-
-  }
-  .week div, .dates div{
-    width: calc(3.55rem / 7);
-    border-radius: 50%;
+    div {
+      width: calc(3.55rem / 7);
+      border-radius: 50%;
+    }
   }
 </style>
