@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-    <div class="month-btn">
-      <div @click="prev"><</div>
-      <div @click="next">></div>
-    </div>
-    <datePicker :date="date" v-on:selectDate="getSelectDate"></datePicker>
+    <datePicker :date="date" @selectDate="getSelectDate" @prev="prev" @next="next" class="time"></datePicker>
   </div>
 </template>
 
@@ -36,7 +32,6 @@ export default {
     },
     getSelectDate (data) {
       this.selectDate = data
-      console.log(data)
     }
   }
 }
@@ -50,17 +45,7 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-.month-btn {
-  width: 100%;
+.time {
   margin-top: 0.1rem;
-  font-size: 0.14rem;
-}
-.month-btn > div:first-child {
-  float: left;
-  margin-left: 0.1rem;
-}
-.month-btn > div:last-child {
-  float: right;
-  margin-right: 0.1rem;
 }
 </style>

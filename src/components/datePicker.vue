@@ -1,7 +1,9 @@
 <template>
   <div class="date-container">
     <div class="month">
-      <span>{{year}}年{{month}}月</span>
+      <div @click="prev" class="btn"><</div>
+      <div>{{year}}年{{month}}月</div>
+      <div @click="next" class="btn">></div>
     </div>
     <div class="week">
       <div v-for = "item in weeks">{{item}}</div>
@@ -9,7 +11,7 @@
     <div class="dates">
       <div :style="{ height: height + 'rem', lineHeight: height + 'rem', width: height * firstDayOfMonth + 'rem' }"></div>
       <div v-for = "item in dayCountOfMonth" v-if="item < selectDate" @click="getSelectDate(item)" :style="{ height: height + 'rem', lineHeight: height + 'rem'}">{{item}}</div>
-      <div v-for = "item in dayCountOfMonth" v-if="item === selectDate" @click="getSelectDate(item)" :style="{ height: height + 'rem', lineHeight: height + 'rem', background: '#FFCD00', color: '#fff'}">{{item}}</div>
+      <div v-for = "item in dayCountOfMonth" v-if="item === selectDate" @click="getSelectDate(item)" :style="{ height: height + 'rem', lineHeight: height + 'rem', background: '#FBB252', color: '#fff'}">{{item}}</div>
       <div v-for = "item in dayCountOfMonth" v-if="item > selectDate" @click="getSelectDate(item)" :style="{ height: height + 'rem', lineHeight: height + 'rem' }">{{item}}</div>
     </div>
   </div>
@@ -62,6 +64,12 @@ export default {
     getSelectDate (selectDate) {
       this.selectDate = selectDate
       this.$emit('selectDate', selectDate)
+    },
+    prev () {
+      this.$emit('prev')
+    },
+    next () {
+      this.$emit('prev')
     }
   },
   watch: {
@@ -80,7 +88,15 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .month {
+    width: calc(100% - 0.2rem);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
     font-size: 0.18rem;
+  }
+  .btn {
+    font-weight: bold;
+    color: #FBB252;
   }
   .week, .dates {
     width: calc(100% - 0.2rem);
