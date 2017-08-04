@@ -3,6 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VueRouter from 'vue-router'
+import routes from './route-config'
+
+Vue.use(VueRouter)
+const router = new VueRouter(routes)
 
 Vue.config.productionTip = false
 
