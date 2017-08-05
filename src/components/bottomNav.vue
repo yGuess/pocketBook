@@ -1,6 +1,6 @@
 <template>
   <div class="nav-container">
-    <router-link :to="item.path" v-for="item in navList">
+    <router-link :to="item.path" v-for="(item, index) in navList" :key="index">
       <img :src="'../../static/' + item.src">
       <div v-if="item.state" style="color: #FBB252">{{item.title}}</div>
       <div v-if="!item.state">{{item.title}}</div>
