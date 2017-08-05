@@ -69,7 +69,7 @@ export default {
       this.$emit('prev')
     },
     next () {
-      this.$emit('prev')
+      this.$emit('next')
     }
   },
   watch: {
