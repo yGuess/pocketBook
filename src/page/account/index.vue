@@ -7,7 +7,7 @@
     </div>
     <div class="assets">
       <div class="assets-amount">
-        <p>1200</p>
+        <p>-1402.63</p>
         <p>总资产</p>
       </div>
       <div class="assets-detail">
@@ -67,9 +67,37 @@ export default {
     margin-right: 0.2rem;
   }
 }
-.assets-detail {
-  display: flex;
-  justify-content: space-around;
+.assets {
+  .assets-amount {
+    margin: 0.1rem 0;
+    font-size: 0.16rem;
+    border-bottom: 1px solid #eee;
+    p:first-child {
+      color: #f00;
+    }
+    p:last-child {
+      margin: 0.05rem 0;
+      color: #aaa;
+      font-size: 0.12rem;
+    }
+  }
+  .assets-detail {
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.12rem;
+    line-height: 0.15rem;
+    p:nth-child(2) {
+      color: #aaa;
+    }
+    p:nth-child(1) {
+      color: #508E08;
+    }
+    .expenditure {
+      p:first-child{
+        color: #f00;
+      }
+    }
+  }
 }
 .bottom-nav {
   width: 100%;
