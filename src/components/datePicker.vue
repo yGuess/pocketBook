@@ -108,7 +108,7 @@ export default {
   .week {
     color: #BABABA;
     div {
-      width: calc(3.55rem / 7);
+      width: calc(100% / 7);
       border-radius: 50%;
     }
   }
@@ -116,7 +116,7 @@ export default {
   font-size: 0.16rem;
   font-weight: 500;
     div {
-      width: calc(3.55rem / 7);
+      width: calc(100% / 7);
       border-radius: 50%;
     }
   }
