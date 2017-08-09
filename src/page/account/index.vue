@@ -72,7 +72,7 @@ export default {
 }
 .assets {
   .assets-amount {
-    padding: 0.1rem 0;
+    padding: 0.15rem 0 0.05rem;
     font-size: 0.16rem;
     border-bottom: 1px solid #eee;
     background: #fff;
@@ -89,8 +89,9 @@ export default {
     display: flex;
     justify-content: space-around;
     font-size: 0.12rem;
-    line-height: 0.15rem;
+    line-height: 0.16rem;
     background: #fff;
+    padding: 0.05rem 0;
     p:nth-child(2) {
       color: #aaa;
     }
@@ -105,10 +106,12 @@ export default {
   }
 }
 .count-list {
+  padding-left: 0.15rem;
   text-align: left;
   font-size: 0.12rem;
-  line-height: 0.18rem;
-  color: #474545;
+  line-height: 0.30rem;
+  color: #6D6D72;
+  border-bottom: 1px solid #C8C7CC;
 }
 .bottom-nav {
   width: 100%;
