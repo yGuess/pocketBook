@@ -25,6 +25,9 @@
         </div>
       </div>
     </div>
+    <div class="count-list">
+      账户列表
+    </div>
     <div class="bottom-nav">
       <bottomNav :navList="navList"></bottomNav>
     </div>
@@ -69,9 +72,10 @@ export default {
 }
 .assets {
   .assets-amount {
-    margin: 0.1rem 0;
+    padding: 0.1rem 0;
     font-size: 0.16rem;
     border-bottom: 1px solid #eee;
+    background: #fff;
     p:first-child {
       color: #f00;
     }
@@ -86,11 +90,12 @@ export default {
     justify-content: space-around;
     font-size: 0.12rem;
     line-height: 0.15rem;
+    background: #fff;
     p:nth-child(2) {
       color: #aaa;
     }
     p:nth-child(1) {
-      color: #508E08;
+      color: #006600;
     }
     .expenditure {
       p:first-child{
@@ -99,9 +104,16 @@ export default {
     }
   }
 }
+.count-list {
+  text-align: left;
+  font-size: 0.12rem;
+  line-height: 0.18rem;
+  color: #474545;
+}
 .bottom-nav {
   width: 100%;
   position: absolute;
   bottom: 0;
+  background: #FDFDFD;
 }
 </style>

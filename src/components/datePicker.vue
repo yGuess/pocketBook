@@ -11,7 +11,7 @@
     <div class="dates">
       <div :style="{ height: height + 'rem', lineHeight: height + 'rem', width: height * firstDayOfMonth + 'rem' }"></div>
       <div v-for = "item in dayCountOfMonth" v-if="item < selectDate" @click="getSelectDate(item)" :style="{ height: height + 'rem', lineHeight: height + 'rem'}">{{item}}</div>
-      <div v-for = "item in dayCountOfMonth" v-if="item === selectDate" @click="getSelectDate(item)" :style="{ height: height + 'rem', lineHeight: height + 'rem', background: '#FBB252', color: '#fff'}">{{item}}</div>
+      <div v-for = "item in dayCountOfMonth" v-if="item === selectDate" @click="getSelectDate(item)" :style="{ height: height + 'rem', lineHeight: height + 'rem', background: '#FDB347', color: '#fff'}">{{item}}</div>
       <div v-for = "item in dayCountOfMonth" v-if="item > selectDate" @click="getSelectDate(item)" :style="{ height: height + 'rem', lineHeight: height + 'rem' }">{{item}}</div>
     </div>
   </div>
@@ -88,14 +88,15 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   .month {
-    width: calc(100% - 0.2rem);
-    margin: 0 auto;
+    padding: 0 0.1rem;
     display: flex;
     justify-content: space-between;
     font-size: 0.18rem;
+    background: #F6F6F6;
+    line-height: 0.3rem;
     .btn {
       font-weight: bold;
-      color: #FBB252;
+      color: #FDB347;
     }
   }
   .week, .dates {
@@ -106,7 +107,11 @@ export default {
     font-size: 0.14rem;
   }
   .week {
-    color: #BABABA;
+    color: #aaa;
+    background: #F6F6F6;
+    margin: 0 auto;
+    padding: 0 0.1rem;
+    line-height: 0.36rem;
     div {
       width: calc(100% / 7);
       border-radius: 50%;

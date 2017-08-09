@@ -30,12 +30,10 @@ export default {
 </script>
 
 <style>
-.time {
-  margin-top: 0.1rem;
-}
 .bottom-nav {
   width: 100%;
   position: absolute;
   bottom: 0;
+  background: #FDFDFD;
 }
 </style>

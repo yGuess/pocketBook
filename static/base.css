@@ -13,6 +13,7 @@ html {
   line-height: 1.15; /* 1 */
   -ms-text-size-adjust: 100%; /* 2 */
   -webkit-text-size-adjust: 100%; /* 2 */
+  background: #EFEFF4;
 }
 
 html, body, p, h1, h2, h3, h4, h5, h6, ul, ol {

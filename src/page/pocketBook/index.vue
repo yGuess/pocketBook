@@ -52,11 +52,12 @@ export default {
 
 <style>
 .time {
-  margin-top: 0.1rem;
+  background: #fff;
 }
 .bottom-nav {
   width: 100%;
   position: absolute;
   bottom: 0;
+  background: #FDFDFD;
 }
 </style>
