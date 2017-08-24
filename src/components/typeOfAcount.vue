@@ -1,5 +1,7 @@
 <template>
-  <div>
+  <div class="type">
+    <div> {{type}} </div>
+    <div :style="{color: fontColor}"> {{money.toFixed(2)}} &nbsp;&nbsp; ></div>
   </div>
 </template>
 
@@ -12,25 +14,40 @@ export default {
     }
   },
   props: {
-    name: {
+    type: {
       type: String,
-      default: 'qyt'
+      default: ''
+    },
+    money: {
+      type: Number,
+      default: 0
     }
   },
   computed: {
-    methodName() {
-
+    fontColor () {
+      if (this.money < 0) {
+        return 'red'
+      } else {
+        return '#006600'
+      }
     }
   },
   methods: {
   },
   watch: {
-    //
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.type {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0.15rem;
+  line-height: 0.35rem;
+  border-bottom: 1px solid #C8C7CC;
+}
 
 </style>
