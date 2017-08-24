@@ -27,7 +27,7 @@
     </div>
     <div class="count-list">
       账户列表
-      <type-of-acount type="现金" :money="money" class="type-of-acount"></type-of-acount>
+      <type-of-acount type="现金" :money="money" path="account/acountDetail" class="type-of-acount"></type-of-acount>
       <type-of-acount type="银行" class="type-of-acount"></type-of-acount>
       <type-of-acount type="银行" class="type-of-acount"></type-of-acount>
     </div>

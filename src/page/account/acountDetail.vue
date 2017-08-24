@@ -1,7 +1,6 @@
 <template>
-  <div class="type" @click="goDetail">
-    <div> {{type}} </div>
-    <div :style="{color: fontColor}"> {{money.toFixed(2)}} &nbsp;&nbsp; <span>></span></div>
+  <div class="">
+    vdfv
   </div>
 </template>
 
@@ -21,10 +20,6 @@ export default {
     money: {
       type: Number,
       default: 0
-    },
-    path: {
-      type: String,
-      default: ''
     }
   },
   computed: {
@@ -37,9 +32,6 @@ export default {
     }
   },
   methods: {
-    goDetail () {
-      this.$router.push({path: this.path})
-    }
   },
   watch: {
   }
@@ -47,7 +39,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style scoped>
 .type {
   background: #fff;
   display: flex;
@@ -55,10 +47,6 @@ export default {
   padding: 0 0.15rem;
   line-height: 0.35rem;
   border-bottom: 1px solid #C8C7CC;
-  div:last-child span {
-    color: #C8C7CC;
-    font-size: 0.15rem;
-  }
 }
 
 </style>
