@@ -27,9 +27,9 @@
     </div>
     <div class="count-list">
       账户列表
-      <type-of-acount type="现金" :money="money" path="account/acountDetail" class="type-of-acount"></type-of-acount>
-      <type-of-acount type="银行" class="type-of-acount"></type-of-acount>
-      <type-of-acount type="银行" class="type-of-acount"></type-of-acount>
+      <list-item leftTitle="现金" :money="money" path="account/acountDetail" color="red" class="list-item"></list-item>
+      <list-item leftTitle="银行" color="#006600" class="list-item"></list-item>
+      <list-item leftTitle="银行" color="#006600" class="list-item"></list-item>
     </div>
     <div class="bottom-nav">
       <bottomNav :navList="navList"></bottomNav>
@@ -39,7 +39,7 @@
 
 <script>
 import bottomNav from '../../components/bottomNav.vue'
-import typeOfAcount from '../../components/typeOfAcount.vue'
+import listItem from '../../components/listItem.vue'
 export default {
   name: 'app',
   data () {
@@ -54,7 +54,7 @@ export default {
   },
   components: {
     bottomNav,
-    typeOfAcount
+    listItem
   },
   methods: {
   },
@@ -117,7 +117,7 @@ export default {
   font-size: 0.12rem;
   line-height: 0.30rem;
   color: #6D6D72;
-  .type-of-acount {
+  .list-item {
     margin-left: -0.15rem;
   }
 }

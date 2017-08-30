@@ -1,7 +1,14 @@
 <template>
   <div class="type" @click="goDetail">
-    <div> {{type}} </div>
-    <div :style="{color: fontColor}"> {{money.toFixed(2)}} &nbsp;&nbsp; <span>></span></div>
+    <div> {{leftTitle}} </div>
+    <div v-if="type===1">
+      <span :style="{color: color}">{{money.toFixed(2)}} &nbsp;&nbsp;</span>
+      <span v-if="hasArrow">></span>
+    </div>
+    <div v-if="type===2">
+      <span :style="{color: color}">{{rightTitle}}</span>
+      <span v-if="hasArrow">></span>
+    </div>
   </div>
 </template>
 
@@ -14,13 +21,29 @@ export default {
     }
   },
   props: {
+    leftTitle: {
+      type: String,
+      default: ''
+    },
     type: {
+      type: Number, // 1--数字， 2--文字，
+      default: 1
+    },
+    hasArrow: {
+      type: Boolean,
+      default: true
+    },
+    color: {
       type: String,
       default: ''
     },
     money: {
       type: Number,
       default: 0
+    },
+    rightTitle: {
+      type: String,
+      default: ''
     },
     path: {
       type: String,
