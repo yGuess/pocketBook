@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div>
     <div class="title">
       <p> < 账户</p>
       <p>现金</p>
@@ -14,13 +14,13 @@
     <list-item leftTitle="账户类型" :type=2 :hasArrow=false color="#000" rightTitle="现金" class="list-item"></list-item>
     <div class="count-list">
       收支
-      <list-item leftTitle="收入" class="list-item" color="red"></list-item>
-      <list-item leftTitle="支出" class="list-item" color="#006600"></list-item>
+      <list-item leftTitle="收入" class="list-item" color="#006600"></list-item>
+      <list-item leftTitle="支出" class="list-item" color="red"></list-item>
     </div>
     <div class="count-list">
       转账
-      <list-item leftTitle="转入" class="list-item" color="red"></list-item>
-      <list-item leftTitle="转出" class="list-item" color="#006600"></list-item>
+      <list-item leftTitle="转入" class="list-item" color="#006600"></list-item>
+      <list-item leftTitle="转出" class="list-item" color="red"></list-item>
     </div>
     <div class="bottom-nav">
       <bottomNav :navList="navList"></bottomNav>
