@@ -4,18 +4,9 @@
       <p @click="goBack"> < 账户</p>
       <p>现金</p>
     </div>
-    <div class="assets">
-      <div class="assets-amount">
-        <p>-1402.63</p>
-        <p>总资产</p>
-      </div>
-    </div>
-    <list-item leftTitle="初始金额" :hasArrow=false  class="list-item" color="#006600"></list-item>
-    <list-item leftTitle="账户类型" :type=2 :hasArrow=false color="#000" rightTitle="现金" class="list-item"></list-item>
     <div class="count-list">
-      收支
-      <list-item leftTitle="收入" class="list-item" color="#006600" path="detail"></list-item>
-      <list-item leftTitle="支出" class="list-item" color="red" path="detail"></list-item>
+      <p>2017年7月</p>
+      <spend-item category="日常用品" spendDetail="7月13日/自己/纸巾" price="80"></spend-item>
     </div>
     <div class="bottom-nav">
       <bottomNav :navList="navList"></bottomNav>
@@ -25,7 +16,7 @@
 
 <script>
 import bottomNav from '../../components/bottomNav.vue'
-import listItem from '../../components/listItem.vue'
+import spendItem from '../../components/spendItem.vue'
 
 export default {
   name: '',
@@ -40,7 +31,7 @@ export default {
   },
   components: {
     bottomNav,
-    listItem
+    spendItem
   },
   props: {
     type: {
@@ -83,30 +74,13 @@ export default {
       float: left;
     }
   }
-  .assets {
-    .assets-amount {
-      padding: 0.15rem 0 0.05rem;
-      font-size: 0.16rem;
-      border-bottom: 1px solid #eee;
-      background: #fff;
-      p:first-child {
-        color: #f00;
-      }
-      p:last-child {
-        margin: 0.05rem 0;
-        color: #aaa;
-        font-size: 0.12rem;
-      }
-    }
-  }
   .count-list {
-    padding-left: 0.15rem;
     text-align: left;
     font-size: 0.12rem;
     line-height: 0.30rem;
     color: #6D6D72;
-    .list-item {
-      margin-left: -0.15rem;
+    p {
+      padding-left: 0.15rem;
     }
   }
   .bottom-nav {

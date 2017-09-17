@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="operate">
-      <div><span>编辑</span><span>转账</span></div>
+      <div><span>编辑</span></div>
       <div>账户</div>
       <div>+</div>
     </div>
