@@ -1,5 +1,6 @@
 <template>
   <div>
+    <pocketNav></pocketNav>
     <datePicker :date="date" @selectDate="getSelectDate" @prev="prev" @next="next" class="time"></datePicker>
     <div class="bottom-nav">
       <bottomNav :navList="navList"></bottomNav>
@@ -8,6 +9,7 @@
 </template>
 
 <script>
+import pocketNav from './pocketNav.vue'
 import bottomNav from '../../components/bottomNav.vue'
 import datePicker from '../../components/datePicker.vue'
 export default {
@@ -24,6 +26,7 @@ export default {
     }
   },
   components: {
+    pocketNav,
     datePicker,
     bottomNav
   },
@@ -50,7 +53,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 .time {
   background: #fff;
 }
