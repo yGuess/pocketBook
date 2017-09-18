@@ -1,6 +1,6 @@
 <template>
   <div>
-    <pocketNav></pocketNav>
+    <pocketNav :navOn="navOn"></pocketNav>
     <datePicker :date="date" @selectDate="getSelectDate" @prev="prev" @next="next" class="time"></datePicker>
     <div class="bottom-nav">
       <bottomNav :navList="navList"></bottomNav>
@@ -16,6 +16,7 @@ export default {
   name: 'app',
   data () {
     return {
+      navOn: 1,
       date: new Date(),
       selectDate: new Date().getDate(),
       navList: [

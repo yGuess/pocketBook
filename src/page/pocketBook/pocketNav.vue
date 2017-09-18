@@ -2,8 +2,8 @@
   <div>
     <div class="nav-wrapper">
       <div class="nav">
-        <div @click="goDate">日历</div>
-        <div @click="goBill">清单</div>
+        <div @click="goDate" :class="{'nav-on': !this.navOn}">日历</div>
+        <div @click="goBill" :class="{'nav-on': this.navOn}">清单</div>
       </div>
       <p>+</p>
     </div>
@@ -19,6 +19,8 @@ export default {
   },
   components: {
   },
+  computed: {
+  },
   methods: {
     goDate () {
 
@@ -32,7 +34,7 @@ export default {
   },
   props: {
     navOn: {
-      type: String,
+      type: Number,
       default: 'data'  // 0-默认为日历，1-清单
     }
   }
@@ -61,8 +63,6 @@ export default {
       border-right: 0;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
-      background: #fff;
-      color: #EB7F13;
     }
     div:last-child {
       border-top-left-radius: 0;
@@ -76,5 +76,9 @@ export default {
     line-height: 0.5rem;
     font-size: 0.25rem;
   }
+}
+.nav-on {
+  background: #fff;
+  color: #EB7F13;
 }
 </style>
