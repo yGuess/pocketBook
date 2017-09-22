@@ -1,7 +1,11 @@
 <template>
   <div>
     <pocketNav :navOn="navOn"></pocketNav>
-    <datePicker :date="date" @selectDate="getSelectDate" @prev="prev" @next="next" class="time"></datePicker>
+    <div class="month">
+      <div @click="prev" class="btn"><</div>
+      <div>{{year}}年{{month}}月</div>
+      <div @click="next" class="btn">></div>
+    </div>
     <div class="bottom-nav">
       <bottomNav :navList="navList"></bottomNav>
     </div>
@@ -16,7 +20,7 @@ export default {
   name: 'app',
   data () {
     return {
-      navOn: 0,
+      navOn: 1,
       date: new Date(),
       selectDate: new Date().getDate(),
       navList: [
@@ -30,6 +34,16 @@ export default {
     pocketNav,
     datePicker,
     bottomNav
+  },
+  props: {
+    year: {
+      type: Number,
+      default: 2017
+    },
+    month: {
+      type: Number,
+      default: 9
+    }
   },
   methods: {
     prev () {
@@ -55,6 +69,18 @@ export default {
 </script>
 
 <style lang="scss">
+.month {
+  padding: 0 0.1rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.18rem;
+  background: #fff;
+  line-height: 0.3rem;
+  .btn {
+    font-weight: bold;
+    color: #FDB347;
+  }
+}
 .time {
   background: #fff;
 }

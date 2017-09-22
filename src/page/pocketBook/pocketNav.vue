@@ -23,10 +23,10 @@ export default {
   },
   methods: {
     goDate () {
-
+      this.$router.push('/')
     },
     goBill () {
-
+      this.$router.push({path: '/pocketBook/pocketList'})
     }
   },
   mounted () {
@@ -67,6 +67,7 @@ export default {
     div:last-child {
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
+      border-left: 0;
     }
   }
   p {
