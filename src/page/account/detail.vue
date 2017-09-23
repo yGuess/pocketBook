@@ -85,7 +85,7 @@ export default {
   }
   .bottom-nav {
     width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     background: #FDFDFD;
   }
