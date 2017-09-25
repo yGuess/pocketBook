@@ -6,6 +6,7 @@ import Account from '../page/account/index.vue'
 import AcountDetail from '../page/account/acountDetail.vue'
 import Detail from '../page/account/detail.vue'
 import PocketList from '../page/pocketBook/pocketList.vue'
+import AddRecord from '../page/pocketBook/addRecord.vue'
 
 Vue.use(Router)
 
@@ -16,6 +17,7 @@ export default new Router({
     {path: '/account', name: 'account', component: Account},
     {path: '/account/acountDetail', name: 'acountDetail', component: AcountDetail},
     {path: '/account/detail', name: 'detail', component: Detail},
-    {path: '/pocketBook/pocketList', name: 'pocketList', component: PocketList}
+    {path: '/pocketBook/pocketList', name: 'pocketList', component: PocketList},
+    {path: '/pocketBook/addRecord', name: 'addRecord', component: AddRecord}
   ]
 })

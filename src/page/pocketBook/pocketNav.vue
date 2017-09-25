@@ -5,7 +5,7 @@
         <div @click="goDate" :class="{'nav-on': !this.navOn}">日历</div>
         <div @click="goBill" :class="{'nav-on': this.navOn}">清单</div>
       </div>
-      <p>+</p>
+      <p @click="goAddRecord">+</p>
     </div>
   </div>
 </template>
@@ -27,6 +27,9 @@ export default {
     },
     goBill () {
       this.$router.push({path: '/pocketBook/pocketList'})
+    },
+    goAddRecord () {
+      this.$router.push({path: '/pocketBook/addRecord'})
     }
   },
   mounted () {
