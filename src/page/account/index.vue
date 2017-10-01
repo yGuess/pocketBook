@@ -31,34 +31,27 @@
       <list-item leftTitle="银行" color="#006600" class="list-item"></list-item>
       <list-item leftTitle="银行" color="#006600" class="list-item"></list-item>
     </div>
-    <div class="bottom-nav">
-      <bottomNav :navList="navList"></bottomNav>
-    </div>
   </div>
 </template>
 
 <script>
-import bottomNav from '../../components/bottomNav.vue'
 import listItem from '../../components/listItem.vue'
 export default {
   name: 'app',
   data () {
     return {
-      navList: [
-        {src: 'write-icon.png', title: '记账本', path: '/', state: false},
-        {src: 'home-icon1.png', title: '账户', path: '/account', state: true},
-        {src: 'set-icon.png', title: '设置', path: '/setUp', state: false}
-      ],
       money: -1200
     }
   },
   components: {
-    bottomNav,
     listItem
   },
   methods: {
+    bottomLayout () {
+    }
   },
   mounted () {
+    this.bottomLayout()
   }
 }
 </script>
@@ -120,11 +113,5 @@ export default {
   .list-item {
     margin-left: -0.15rem;
   }
-}
-.bottom-nav {
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  background: #FDFDFD;
 }
 </style>

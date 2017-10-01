@@ -2,15 +2,11 @@
   <div>
     <pocketNav :navOn="navOn"></pocketNav>
     <datePicker :date="date" @selectDate="getSelectDate" @prev="prev" @next="next" class="time"></datePicker>
-    <div class="bottom-nav">
-      <bottomNav :navList="navList"></bottomNav>
-    </div>
   </div>
 </template>
 
 <script>
 import pocketNav from './pocketNav.vue'
-import bottomNav from '../../components/bottomNav.vue'
 import datePicker from '../../components/datePicker.vue'
 export default {
   name: 'app',
@@ -18,18 +14,12 @@ export default {
     return {
       navOn: 0,
       date: new Date(),
-      selectDate: new Date().getDate(),
-      navList: [
-        {src: 'write-icon1.png', title: '记账本', path: '/', state: true},
-        {src: 'home-icon.png', title: '账户', path: '/account', state: false},
-        {src: 'set-icon.png', title: '设置', path: '/setUp', state: false}
-      ]
+      selectDate: new Date().getDate()
     }
   },
   components: {
     pocketNav,
-    datePicker,
-    bottomNav
+    datePicker
   },
   methods: {
     prev () {
@@ -57,11 +47,5 @@ export default {
 <style lang="scss">
 .time {
   background: #fff;
-}
-.bottom-nav {
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  background: #FDFDFD;
 }
 </style>

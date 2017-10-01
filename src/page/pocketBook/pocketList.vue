@@ -29,34 +29,24 @@
         <p class="day-total">支出：82.30</p>
       </div>
     </div>
-    <div class="bottom-nav">
-      <bottomNav :navList="navList"></bottomNav>
-    </div>
   </div>
 </template>
 
 <script>
 import pocketNav from './pocketNav.vue'
 import spendItem from '../../components/spendItem.vue'
-import bottomNav from '../../components/bottomNav.vue'
 export default {
   name: 'app',
   data () {
     return {
       navOn: 1,
       date: new Date(),
-      selectDate: new Date().getDate(),
-      navList: [
-        {src: 'write-icon1.png', title: '记账本', path: '/', state: true},
-        {src: 'home-icon.png', title: '账户', path: '/account', state: false},
-        {src: 'set-icon.png', title: '设置', path: '/setUp', state: false}
-      ]
+      selectDate: new Date().getDate()
     }
   },
   components: {
     pocketNav,
-    spendItem,
-    bottomNav
+    spendItem
   },
   props: {
     year: {
@@ -138,11 +128,5 @@ export default {
 }
 .list .day-list:last-child {
   margin-bottom: 0.8rem;
-}
-.bottom-nav {
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  background: #FDFDFD;
 }
 </style>

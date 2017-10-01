@@ -8,29 +8,19 @@
       <p>2017年7月</p>
       <spend-item category="日常用品" spendDetail="7月13日/自己/纸巾" price="80"></spend-item>
     </div>
-    <div class="bottom-nav">
-      <bottomNav :navList="navList"></bottomNav>
-    </div>
   </div>
 </template>
 
 <script>
-import bottomNav from '../../components/bottomNav.vue'
 import spendItem from '../../components/spendItem.vue'
 
 export default {
   name: '',
   data () {
     return {
-      navList: [
-        {src: 'write-icon.png', title: '记账本', path: '/', state: false},
-        {src: 'home-icon1.png', title: '账户', path: '/account', state: true},
-        {src: 'set-icon.png', title: '设置', path: '/setUp', state: false}
-      ]
     }
   },
   components: {
-    bottomNav,
     spendItem
   },
   props: {
@@ -82,11 +72,5 @@ export default {
     p {
       padding-left: 0.15rem;
     }
-  }
-  .bottom-nav {
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    background: #FDFDFD;
   }
 </style>
