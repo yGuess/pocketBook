@@ -11,7 +11,8 @@
 <script>
 import pocketNav from './pocketNav.vue'
 import datePicker from '../../components/datePicker.vue'
-import fetcher from 'axios'
+import axios from 'axios'
+import { baseUrl } from '../../utils/index.js'
 export default {
   name: 'app',
   data () {
@@ -43,7 +44,7 @@ export default {
       this.selectDate = data
     },
     getUserList () {
-      fetcher.get('http://127.0.0.1:3000/test', {
+      axios.get(baseUrl + '/test', {
         // 入参为空
       }).then((res) => {
         this.test = res.data
