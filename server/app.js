@@ -48,7 +48,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
-// test接口
+// 测试接口
 router.get('/test', function (req, res) {
   // connection.connect()
   let sql = 'SELECT * FROM user'
